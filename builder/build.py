@@ -3,7 +3,7 @@
 Генератор языковых страниц лендинга LiDTrainer.
 
 Использование:
-    python3 build.py            # генерирует site/lidtrainer/{lang}/index.html + sitemap.xml
+    python3 build.py            # генерирует docs/lidtrainer/{lang}/index.html + sitemap.xml
 
 Источники:
     builder/template.html           — одобренный дизайн с плейсхолдерами {{key}}
@@ -21,11 +21,14 @@ import json
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent          # builder/
-SITE = ROOT.parent / "site" / "lidtrainer"              # куда писать страницы
 
 CONFIG = json.loads((ROOT / "data" / "languages.json").read_text(encoding="utf-8"))
 SITE_URL = CONFIG["site_url"]          # "https://48apps.com"
 BASE_PATH = CONFIG["base_path"]        # "/lidtrainer"
+
+# Куда писать страницы: docs/ (отсюда GitHub Pages отдаёт сайт) + подпапка
+# приложения из base_path. Так для нового приложения путь подстроится сам.
+SITE = ROOT.parent / "docs" / BASE_PATH.strip("/")
 PLAY_URL = CONFIG["play_url"]
 APPSTORE_URL = CONFIG["appstore_url"]
 X_DEFAULT = CONFIG["x_default"]
