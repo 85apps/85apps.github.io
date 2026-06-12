@@ -1,0 +1,86 @@
+{
+  "site_url": "https://48apps.com",
+  "base_path": "/lidtrainer",
+  "play_url": "https://play.google.com/store/apps/details?id=com.igo.lidtrainer",
+  "appstore_url": "https://apps.apple.com/app/id6762415996",
+  "x_default": "en",
+  "languages": [
+    {
+      "code": "ru",
+      "dir": "ltr",
+      "name": "Русский",
+      "ogLocale": "ru_RU",
+      "fastlane": "ru-RU"
+    },
+    {
+      "code": "en",
+      "dir": "ltr",
+      "name": "English",
+      "ogLocale": "en_US",
+      "fastlane": "en-US"
+    },
+    {
+      "code": "de",
+      "dir": "ltr",
+      "name": "Deutsch",
+      "ogLocale": "de_DE",
+      "fastlane": "de-DE"
+    },
+    {
+      "code": "tr",
+      "dir": "ltr",
+      "name": "Türkçe",
+      "ogLocale": "tr_TR",
+      "fastlane": "tr-TR"
+    },
+    {
+      "code": "ar",
+      "dir": "rtl",
+      "name": "العربية",
+      "ogLocale": "ar_AR",
+      "fastlane": "ar"
+    },
+    {
+      "code": "uk",
+      "dir": "ltr",
+      "name": "Українська",
+      "ogLocale": "uk_UA",
+      "fastlane": "uk"
+    },
+    {
+      "code": "pl",
+      "dir": "ltr",
+      "name": "Polski",
+      "ogLocale": "pl_PL",
+      "fastlane": "pl-PL"
+    },
+    {
+      "code": "ro",
+      "dir": "ltr",
+      "name": "Română",
+      "ogLocale": "ro_RO",
+      "fastlane": "ro"
+    },
+    {
+      "code": "fa",
+      "dir": "rtl",
+      "name": "فارسی",
+      "ogLocale": "fa_IR",
+      "fastlane": "fa"
+    },
+    {
+      "code": "hi",
+      "dir": "ltr",
+      "name": "हिन्दी",
+      "ogLocale": "hi_IN",
+      "fastlane": "hi-IN"
+    },
+    {
+      "code": "vi",
+      "dir": "ltr",
+      "name": "Tiếng Việt",
+      "ogLocale": "vi_VN",
+      "fastlane": "vi"
+    }
+  ]
+}
