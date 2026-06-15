@@ -1,0 +1,103 @@
+/* ===========================================================
+   35apps — studio homepage · shared design tokens & base
+   (де-факто дизайн-система проекта: светлая тема приложения)
+   =========================================================== */
+:root {
+  --bg: #F5F5F5;             /* Grey100 — фон */
+  --surface: #FFFFFF;        /* белые карточки */
+  --text: #1B1B1B;           /* антрацит */
+  --text-2: #616161;         /* Grey700 — подписи */
+  --text-3: #9E9E9E;         /* Grey500 — тихие подписи */
+  --border: #E0E0E0;         /* Grey300 */
+  --border-strong: #BDBDBD;  /* Grey400 */
+  --maroon: #6D3B3B;         /* фирменный акцент (лендинг LiDTrainer) */
+  --maroon-soft: #F3EAEA;    /* подложка акцента */
+  --brand: #2C9C8E;          /* бирюзовый — бренд студии 85apps */
+  --brand-soft: #E3F1EF;     /* подложка бренда */
+  --dark: #263238;           /* BlueGrey900 — footer / контраст */
+  /* пастельные стикеры приложения */
+  --p-indigo: #9FA8DA;
+  --p-bluegrey: #B0BEC5;
+  --p-green: #A5D6A7;
+  --p-orange: #FFCC80;
+  --p-yellow: #FFE082;
+  --p-teal: #80CBC4;
+  --p-red: #EF9A9A;
+  --radius: 18px;
+  --radius-lg: 26px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1080px; margin-inline: auto; padding-inline: 24px; }
+
+/* ---------- Wordmark ---------- */
+.wordmark { display: inline-flex; align-items: baseline; gap: 1px; font-weight: 800; letter-spacing: -0.03em; }
+.wordmark .num { color: var(--text); }
+.wordmark .word { color: var(--brand); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  border-radius: 999px; font-weight: 600; font-size: 16px;
+  padding: 13px 26px; min-height: 52px; cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--dark); color: #fff; }
+.btn-primary:hover { background: #37474F; }
+.btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border-strong); }
+.btn-ghost:hover { border-color: var(--text-2); }
+.btn-sm { font-size: 14px; padding: 9px 16px; min-height: 0; }
+
+.store-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn-store {
+  display: inline-flex; align-items: center; gap: 11px;
+  border-radius: 13px; padding: 11px 20px; min-height: 50px;
+  background: var(--dark); color: #fff; font-weight: 600; font-size: 15px;
+  transition: background 0.15s ease;
+}
+.btn-store:hover { background: #37474F; }
+.btn-store small { display: block; font-size: 10.5px; font-weight: 500; opacity: 0.75; line-height: 1.2; }
+.btn-store .lbl { line-height: 1.25; }
+
+/* ---------- App icon tile ---------- */
+.appicon { border-radius: 22%; box-shadow: 0 8px 20px -10px rgba(38,50,56,0.4); }
+
+/* ---------- Footer (общий) ---------- */
+.studio-footer { border-top: 1px solid var(--border); margin-top: 8px; }
+.studio-footer .wrap { padding-block: 40px; display: flex; flex-wrap: wrap; gap: 18px 32px; align-items: center; }
+.studio-footer .fm { display: flex; align-items: center; gap: 1px; font-size: 17px; }
+.studio-footer .fnote { color: var(--text-3); font-size: 13.5px; }
+.studio-footer .flinks { margin-inline-start: auto; display: flex; gap: 20px; }
+.studio-footer .flinks a { color: var(--text-2); font-size: 13.5px; }
+.studio-footer .flinks a:hover { color: var(--text); }
+
+/* ---------- Variant switcher (только для ревью) ---------- */
+.variant-switch {
+  position: fixed; bottom: 18px; inset-inline-end: 18px; z-index: 99;
+  display: flex; gap: 4px; background: #fff; border: 1px solid var(--border-strong);
+  border-radius: 999px; padding: 4px; box-shadow: 0 8px 24px -8px rgba(0,0,0,0.25);
+  font-size: 13px; font-weight: 700;
+}
+.variant-switch a { padding: 7px 15px; border-radius: 999px; color: var(--text-2); }
+.variant-switch a.on { background: var(--dark); color: #fff; }
+.variant-switch a:hover:not(.on) { color: var(--text); }
+
+/* ---------- «Скоро» бейдж ---------- */
+.soon {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-3); background: var(--bg); border: 1px solid var(--border);
+  padding: 4px 10px; border-radius: 999px;
+}

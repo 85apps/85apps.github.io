@@ -23,7 +23,7 @@ import pathlib
 ROOT = pathlib.Path(__file__).resolve().parent          # builder/
 
 CONFIG = json.loads((ROOT / "data" / "languages.json").read_text(encoding="utf-8"))
-SITE_URL = CONFIG["site_url"]          # "https://48apps.com"
+SITE_URL = CONFIG["site_url"]          # "https://85apps.com"
 BASE_PATH = CONFIG["base_path"]        # "/lidtrainer"
 
 # Куда писать страницы: docs/ (отсюда GitHub Pages отдаёт сайт) + подпапка
@@ -68,6 +68,28 @@ def lang_links(current: str) -> str:
     return "\n".join(out)
 
 
+def lang_switch(current: str) -> str:
+    cur_name = next((L["name"] for L in LANGS if L["code"] == current), current.upper())
+    globe = (
+        '<svg class="globe" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" '
+        'd="M12 2a10 10 0 100 20 10 10 0 000-20zm6.92 6h-2.95a15.7 15.7 0 00-1.38-3.56A8.03 8.03 0 0118.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 010-4h3.38a16.6 16.6 0 000 4H4.26zm.82 2h2.95c.34 1.27.81 2.47 1.38 3.56A7.99 7.99 0 015.08 16zm2.95-8H5.08a7.99 7.99 0 014.33-3.56A15.7 15.7 0 008.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82a13.7 13.7 0 01-1.91 3.96zM14.34 14H9.66a14.6 14.6 0 010-4h4.68a14.6 14.6 0 010 4zm.25 5.56c.57-1.09 1.04-2.29 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14a16.6 16.6 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"></path></svg>'
+    )
+    chev = (
+        '<svg class="chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" '
+        'stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"></path></svg>'
+    )
+    out = ['<details class="lang-switch">']
+    out.append(f'  <summary aria-label="Language / Sprache">{globe}<span>{cur_name}</span>{chev}</summary>')
+    out.append('  <div class="lang-menu">')
+    for L in LANGS:
+        cur = ' aria-current="page"' if L["code"] == current else ""
+        rtl = ' dir="rtl"' if L["dir"] == "rtl" else ""
+        out.append(f'    <a href="../{L["code"]}/"{cur} lang="{L["code"]}"{rtl}>{L["name"]}</a>')
+    out.append("  </div>")
+    out.append("</details>")
+    return "\n".join(out)
+
+
 def json_ld(lang: str, page_url: str) -> str:
     return json.dumps(
         {
@@ -106,6 +128,7 @@ def build_page(L: dict) -> str:
         "hreflang_links": hreflang_links(),
         "json_ld": json_ld(code, page_url),
         "lang_links": lang_links(code),
+        "lang_switch": lang_switch(code),
         "play_url": PLAY_URL,
         "appstore_url": APPSTORE_URL,
     }

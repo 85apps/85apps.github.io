@@ -3,40 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>48apps</title>
-<meta name="description" content="48apps — apps that help. Starting with LiDTrainer: the German citizenship test in 100+ languages.">
-<!-- Заглушка-главная студии. Пока один продукт — позже заменить на полноценную витрину. -->
-<meta name="robots" content="noindex">
+<title>85apps — Mobile App Studio</title>
+<meta name="description" content="85apps is a mobile app studio. We build simple, honest apps that work offline and don't get in your way.">
+<link rel="canonical" href="https://85apps.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="85apps">
+<meta property="og:title" content="85apps — Mobile App Studio">
+<meta property="og:description" content="Simple, honest mobile apps that work offline and don't get in your way.">
+<meta property="og:url" content="https://85apps.com/">
+<link rel="stylesheet" href="studio.css">
 <style>
-  :root { --bg:#F5F5F5; --surface:#FFFFFF; --text:#1B1B1B; --muted:#5F5F5F; --maroon:#6D3B3B; --border:#E0E0E0; }
-  * { box-sizing: border-box; }
-  body { margin:0; min-height:100vh; display:grid; place-items:center;
-         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-         background:var(--bg); color:var(--text); padding:24px; }
-  .card { background:var(--surface); border:1px solid var(--border); border-radius:18px;
-          max-width:440px; width:100%; padding:40px 32px; text-align:center;
-          box-shadow:0 8px 30px rgba(0,0,0,.05); }
-  .brand { font-size:32px; font-weight:800; letter-spacing:-.5px; color:var(--maroon); margin:0 0 6px; }
-  .tag { color:var(--muted); margin:0 0 28px; font-size:15px; }
-  .app { display:block; text-decoration:none; color:inherit; border:1px solid var(--border);
-         border-radius:14px; padding:16px 18px; text-align:left; transition:border-color .15s, transform .15s; }
-  .app:hover { border-color:var(--maroon); transform:translateY(-1px); }
-  .app h2 { margin:0 0 4px; font-size:17px; }
-  .app p { margin:0; color:var(--muted); font-size:14px; }
-  .arrow { float:right; color:var(--maroon); font-weight:700; }
-  footer { margin-top:24px; font-size:12px; color:var(--muted); }
+/* ---------- Start page · Showcase ---------- */
+.v1-top { padding: 28px 0; }
+.v1-top .wrap { display: flex; align-items: center; }
+.v1-top .wordmark { font-size: 22px; }
+.v1-top nav { margin-inline-start: auto; display: flex; gap: 26px; font-size: 14.5px; color: var(--text-2); }
+.v1-top nav a:hover { color: var(--text); }
+
+.v1-hero { padding: 64px 0 40px; text-align: center; }
+.v1-eyebrow {
+  display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--brand); background: var(--brand-soft);
+  padding: 7px 16px; border-radius: 999px; margin-bottom: 28px;
+}
+.v1-hero h1 {
+  font-size: clamp(34px, 5.2vw, 60px); line-height: 1.08; font-weight: 800;
+  letter-spacing: -0.025em; max-width: 16ch; margin: 0 auto 22px;
+}
+.v1-hero p {
+  font-size: clamp(17px, 2.1vw, 21px); color: var(--text-2);
+  max-width: 46ch; margin: 0 auto;
+}
+
+/* App catalog */
+.v1-apps { padding: 24px 0 88px; }
+.v1-apps-head {
+  display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px;
+  padding-bottom: 16px; border-bottom: 1px solid var(--border);
+}
+.v1-apps-head h2 { font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); }
+.v1-apps-head .count { font-size: 13px; color: var(--text-3); }
+.v1-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+
+.appcard {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 26px; align-items: center;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 26px 30px;
+  transition: border-color 0.15s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.appcard:hover { border-color: var(--border-strong); box-shadow: 0 18px 40px -26px rgba(38,50,56,0.5); transform: translateY(-2px); }
+.appcard .ic { width: 78px; height: 78px; }
+.appcard .meta h3 { font-size: 21px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 5px; }
+.appcard .meta .cat { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand); margin-bottom: 9px; }
+.appcard .meta p { font-size: 15px; color: var(--text-2); max-width: 52ch; }
+.appcard .go {
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  font-weight: 600; font-size: 15px; color: var(--text);
+  border: 1px solid var(--border-strong); border-radius: 999px; padding: 11px 22px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.appcard:hover .go { background: var(--dark); color: #fff; border-color: var(--dark); }
+.appcard .go svg { width: 16px; height: 16px; }
+
+.appcard .stats { display: flex; gap: 22px; margin-top: 14px; }
+.appcard .stats span { font-size: 13px; color: var(--text-3); display: inline-flex; align-items: center; gap: 6px; }
+.appcard .stats b { color: var(--text); font-weight: 700; }
+
+/* coming soon row */
+.v1-soon {
+  margin-top: 18px; display: flex; align-items: center; gap: 16px;
+  border: 1px dashed var(--border-strong); border-radius: var(--radius-lg);
+  padding: 22px 30px; color: var(--text-2); font-size: 15px;
+}
+.v1-soon .dots { display: flex; gap: 7px; }
+.v1-soon .dots i { width: 12px; height: 12px; border-radius: 4px; display: block; opacity: 0.85; }
+
+@media (max-width: 720px) {
+  .v1-top nav { display: none; }
+  .appcard { grid-template-columns: auto 1fr; row-gap: 18px; padding: 22px; }
+  .appcard .go { grid-column: 1 / -1; justify-content: center; }
+  .appcard .stats { flex-wrap: wrap; gap: 12px 20px; }
+}
 </style>
 </head>
-<body>
-  <main class="card">
-    <p class="brand">48apps</p>
-    <p class="tag">Apps that help · Apps, die helfen</p>
-    <a class="app" href="/lidtrainer/">
-      <span class="arrow">→</span>
-      <h2>LiDTrainer</h2>
-      <p>«Leben in Deutschland» / Einbürgerungstest — 310 questions in 100+ languages.</p>
-    </a>
-    <footer>© 2026 48apps</footer>
-  </main>
+<body data-screen-label="85apps · Start page">
+
+<header class="v1-top">
+  <div class="wrap">
+    <span class="wordmark"><span class="num">85</span><span class="word">apps</span></span>
+    <nav>
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+      <a href="mailto:85apps@proton.me">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="v1-hero">
+    <div class="wrap">
+      <span class="v1-eyebrow">Mobile App Studio</span>
+      <h1>Simple apps that respect your time</h1>
+      <p>We build small, honest mobile apps: they work offline, with no ads and no noise. Pick an app below.</p>
+    </div>
+  </section>
+
+  <section class="v1-apps" id="apps">
+    <div class="wrap">
+      <div class="v1-apps-head">
+        <h2>Our apps</h2>
+        <span class="count">1 available now</span>
+      </div>
+
+      <div class="v1-grid">
+        <a class="appcard" href="lidtrainer/">
+          <img class="ic appicon" src="assets/app-icon.png" alt="LiDTrainer app icon" width="78" height="78">
+          <div class="meta">
+            <div class="cat">Education · Germany</div>
+            <h3>Leben in Deutschland — Test Trainer</h3>
+            <p>All 310 official questions of the German citizenship test (Einbürgerungstest) with translations. Mock exam, mistake review, and fully offline.</p>
+            <div class="stats">
+              <span><b>310</b> questions</span>
+              <span><b>100+</b> languages</span>
+              <span><b>Free</b></span>
+            </div>
+          </div>
+          <span class="go">Open
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="v1-soon">
+        <span class="dots" aria-hidden="true">
+          <i style="background: var(--p-indigo);"></i>
+          <i style="background: var(--p-teal);"></i>
+          <i style="background: var(--p-orange);"></i>
+        </span>
+        <span>We're working on more apps. <b style="color: var(--text);">New ones coming soon.</b></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="studio-footer" id="about">
+  <div class="wrap">
+    <span class="fm wordmark"><span class="num">85</span><span class="word">apps</span></span>
+    <span class="fnote">Mobile app studio. © 2026</span>
+    <span class="flinks">
+      <a href="mailto:85apps@proton.me">85apps@proton.me</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>

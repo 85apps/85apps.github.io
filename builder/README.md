@@ -45,8 +45,8 @@ site/lidtrainer/         # РЕЗУЛЬТАТ генерации — это де
 - JSON-LD `SoftwareApplication`
 - `sitemap.xml` генерируется вместе со страницами
 
-`robots.txt` со строкой `Sitemap: https://48apps.com/lidtrainer/sitemap.xml`
-должен лежать в корне домена (зонтичный репозиторий `48apps.github.io`).
+`robots.txt` со строкой `Sitemap: https://85apps.com/lidtrainer/sitemap.xml`
+должен лежать в корне домена (зонтичный репозиторий `85apps.github.io`).
 
 ## Решено заказчиком (12.06.2026)
 
