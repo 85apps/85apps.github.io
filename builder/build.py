@@ -97,7 +97,7 @@ def json_ld(lang: str, page_url: str) -> str:
             "@type": "SoftwareApplication",
             "name": "310: Leben in DE (100+ Lang)",
             "applicationCategory": "EducationalApplication",
-            "operatingSystem": "Android",
+            "operatingSystem": "Android, iOS",
             "inLanguage": lang,
             "url": page_url,
             "installUrl": PLAY_URL,
