@@ -620,6 +620,97 @@
       "name": "ਪੰਜਾਬੀ",
       "ogLocale": "pa_IN",
       "fastlane": "_del(pa)"
+    },
+    {
+      "code": "sd",
+      "dir": "rtl",
+      "name": "سنڌي",
+      "ogLocale": "sd_PK",
+      "fastlane": "_del(sd)"
+    },
+    {
+      "code": "si",
+      "dir": "ltr",
+      "name": "සිංහල",
+      "ogLocale": "si_LK",
+      "fastlane": "_del(si)"
+    },
+    {
+      "code": "sl",
+      "dir": "ltr",
+      "name": "Slovenščina",
+      "ogLocale": "sl_SI",
+      "fastlane": "_del(sl)"
+    },
+    {
+      "code": "so",
+      "dir": "ltr",
+      "name": "Soomaali",
+      "ogLocale": "so_SO",
+      "fastlane": "_del(so)"
+    },
+    {
+      "code": "tg",
+      "dir": "ltr",
+      "name": "Тоҷикӣ",
+      "ogLocale": "tg_TJ",
+      "fastlane": "_del(tg)"
+    },
+    {
+      "code": "tt",
+      "dir": "ltr",
+      "name": "Татарча",
+      "ogLocale": "tt_RU",
+      "fastlane": "_del(tt)"
+    },
+    {
+      "code": "te",
+      "dir": "ltr",
+      "name": "తెలుగు",
+      "ogLocale": "te_IN",
+      "fastlane": "_del(te)"
+    },
+    {
+      "code": "ti",
+      "dir": "ltr",
+      "name": "ትግርኛ",
+      "ogLocale": "ti_ET",
+      "fastlane": "_del(ti)"
+    },
+    {
+      "code": "tk",
+      "dir": "ltr",
+      "name": "Türkmen",
+      "ogLocale": "tk_TM",
+      "fastlane": "_del(tk)"
+    },
+    {
+      "code": "cy",
+      "dir": "ltr",
+      "name": "Cymraeg",
+      "ogLocale": "cy_GB",
+      "fastlane": "_del(cy)"
+    },
+    {
+      "code": "wo",
+      "dir": "ltr",
+      "name": "Wolof",
+      "ogLocale": "wo_SN",
+      "fastlane": "_del(wo)"
+    },
+    {
+      "code": "yo",
+      "dir": "ltr",
+      "name": "Yorùbá",
+      "ogLocale": "yo_NG",
+      "fastlane": "_del(yo)"
+    },
+    {
+      "code": "zu",
+      "dir": "ltr",
+      "name": "isiZulu",
+      "ogLocale": "zu_ZA",
+      "fastlane": "_del(zu)"
     }
   ]
 }

@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex">
 <script>
 (function () {
-  var supported = ["af", "az", "id", "ms", "bs", "ca", "da", "de", "et", "en", "es", "eu", "tl", "fr", "ff", "ga", "gl", "ha", "hr", "ig", "rn", "it", "rw", "sw", "ku", "lv", "lt", "ln", "hu", "mg", "mt", "nl", "no", "om", "uz", "pl", "pt", "pt-BR", "ro", "sq", "sk", "fi", "sv", "vi", "tr", "is", "cs", "el", "be", "bg", "ky", "mk", "mn", "ce", "ru", "sr", "uk", "kk", "hy", "he", "ur", "ar", "prs", "fa", "ps", "ckb", "ne", "mr", "hi", "as", "bn", "pa", "gu", "or", "ta", "kn", "ml", "th", "lo", "kar", "my", "ka", "am", "km", "zh", "zh-TW", "ja", "ko"];
+  var supported = ["af", "az", "id", "ms", "bs", "ca", "cy", "da", "de", "et", "en", "es", "eu", "tl", "fr", "ff", "ga", "gl", "ha", "hr", "ig", "rn", "zu", "it", "rw", "sw", "ku", "lv", "lt", "ln", "hu", "mg", "mt", "nl", "no", "om", "uz", "pl", "pt", "pt-BR", "ro", "sq", "sk", "sl", "so", "fi", "sv", "vi", "tk", "tr", "wo", "yo", "is", "cs", "el", "be", "bg", "ky", "mk", "mn", "ce", "ru", "sr", "tt", "tg", "uk", "kk", "hy", "he", "ur", "ar", "prs", "sd", "fa", "ps", "ckb", "ne", "mr", "hi", "as", "bn", "pa", "gu", "or", "ta", "te", "kn", "ml", "si", "th", "lo", "kar", "my", "ka", "ti", "am", "km", "zh", "zh-TW", "ja", "ko"];
   var langs = navigator.languages || [navigator.language || "en"];
   var target = "en";
   for (var i = 0; i < langs.length; i++) {
@@ -34,6 +34,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
     <li><a href="./ms/" lang="ms">Bahasa Melayu</a></li>
     <li><a href="./bs/" lang="bs">Bosanski</a></li>
     <li><a href="./ca/" lang="ca">Català</a></li>
+    <li><a href="./cy/" lang="cy">Cymraeg</a></li>
     <li><a href="./da/" lang="da">Dansk</a></li>
     <li><a href="./de/" lang="de">Deutsch</a></li>
     <li><a href="./et/" lang="et">Eesti</a></li>
@@ -49,6 +50,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
     <li><a href="./hr/" lang="hr">Hrvatski</a></li>
     <li><a href="./ig/" lang="ig">Igbo</a></li>
     <li><a href="./rn/" lang="rn">Ikirundi</a></li>
+    <li><a href="./zu/" lang="zu">isiZulu</a></li>
     <li><a href="./it/" lang="it">Italiano</a></li>
     <li><a href="./rw/" lang="rw">Kinyarwanda</a></li>
     <li><a href="./sw/" lang="sw">Kiswahili</a></li>
@@ -69,10 +71,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
     <li><a href="./ro/" lang="ro">Română</a></li>
     <li><a href="./sq/" lang="sq">Shqip</a></li>
     <li><a href="./sk/" lang="sk">Slovenčina</a></li>
+    <li><a href="./sl/" lang="sl">Slovenščina</a></li>
+    <li><a href="./so/" lang="so">Soomaali</a></li>
     <li><a href="./fi/" lang="fi">Suomi</a></li>
     <li><a href="./sv/" lang="sv">Svenska</a></li>
     <li><a href="./vi/" lang="vi">Tiếng Việt</a></li>
+    <li><a href="./tk/" lang="tk">Türkmen</a></li>
     <li><a href="./tr/" lang="tr">Türkçe</a></li>
+    <li><a href="./wo/" lang="wo">Wolof</a></li>
+    <li><a href="./yo/" lang="yo">Yorùbá</a></li>
     <li><a href="./is/" lang="is">Íslenska</a></li>
     <li><a href="./cs/" lang="cs">Čeština</a></li>
     <li><a href="./el/" lang="el">Ελληνικά</a></li>
@@ -84,6 +91,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
     <li><a href="./ce/" lang="ce">Нохчийн</a></li>
     <li><a href="./ru/" lang="ru">Русский</a></li>
     <li><a href="./sr/" lang="sr">Српски</a></li>
+    <li><a href="./tt/" lang="tt">Татарча</a></li>
+    <li><a href="./tg/" lang="tg">Тоҷикӣ</a></li>
     <li><a href="./uk/" lang="uk">Українська</a></li>
     <li><a href="./kk/" lang="kk">Қазақша</a></li>
     <li><a href="./hy/" lang="hy">Հայերեն</a></li>
@@ -91,6 +100,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
     <li><a href="./ur/" lang="ur" dir="rtl">اردو</a></li>
     <li><a href="./ar/" lang="ar" dir="rtl">العربية</a></li>
     <li><a href="./prs/" lang="prs" dir="rtl">دری</a></li>
+    <li><a href="./sd/" lang="sd" dir="rtl">سنڌي</a></li>
     <li><a href="./fa/" lang="fa" dir="rtl">فارسی</a></li>
     <li><a href="./ps/" lang="ps" dir="rtl">پښتو</a></li>
     <li><a href="./ckb/" lang="ckb" dir="rtl">کوردی (سۆرانی)</a></li>
@@ -103,13 +113,16 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
     <li><a href="./gu/" lang="gu">ગુજરાતી</a></li>
     <li><a href="./or/" lang="or">ଓଡ଼ିଆ</a></li>
     <li><a href="./ta/" lang="ta">தமிழ்</a></li>
+    <li><a href="./te/" lang="te">తెలుగు</a></li>
     <li><a href="./kn/" lang="kn">ಕನ್ನಡ</a></li>
     <li><a href="./ml/" lang="ml">മലയാളം</a></li>
+    <li><a href="./si/" lang="si">සිංහල</a></li>
     <li><a href="./th/" lang="th">ไทย</a></li>
     <li><a href="./lo/" lang="lo">ລາວ</a></li>
     <li><a href="./kar/" lang="kar">ကညီ</a></li>
     <li><a href="./my/" lang="my">မြန်မာ</a></li>
     <li><a href="./ka/" lang="ka">ქართული</a></li>
+    <li><a href="./ti/" lang="ti">ትግርኛ</a></li>
     <li><a href="./am/" lang="am">አማርኛ</a></li>
     <li><a href="./km/" lang="km">ខ្មែរ</a></li>
     <li><a href="./zh/" lang="zh">中文 (简体)</a></li>
