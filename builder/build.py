@@ -19,6 +19,7 @@
 """
 import json
 import pathlib
+import urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parent          # builder/
 
@@ -31,7 +32,37 @@ BASE_PATH = CONFIG["base_path"]        # "/lidtrainer"
 SITE = ROOT.parent / "docs" / BASE_PATH.strip("/")
 PLAY_URL = CONFIG["play_url"]
 APPSTORE_URL = CONFIG["appstore_url"]
+# Apple App Store campaign attribution (App Analytics → Campaigns) работает
+# только если задан provider token (число из App Store Connect → App Analytics).
+# Пусто => ссылки App Store остаются чистыми (атрибуция идёт по Web Referrers,
+# на уровне домена). Заполнить — и per-language метки активируются сами.
+APPLE_PT = CONFIG.get("apple_provider_token", "").strip()
 X_DEFAULT = CONFIG["x_default"]
+
+
+def play_link(code: str, pos: str) -> str:
+    """Ссылка Google Play с меткой источника (utm в параметре referrer).
+
+    Метки — это только параметры URL: ни кук, ни скриптов на сайте.
+    В Play Console (Acquisition) видно установки/визиты по utm_campaign (язык)
+    и по utm_content (какая кнопка: hero/final).
+    """
+    ref = (
+        f"utm_source=85apps&utm_medium=landing"
+        f"&utm_campaign=lid_{code}&utm_content={pos}"
+    )
+    sep = "&" if "?" in PLAY_URL else "?"
+    return f"{PLAY_URL}{sep}referrer={urllib.parse.quote(ref, safe='')}"
+
+
+def appstore_link(code: str, pos: str) -> str:
+    """Ссылка App Store. С provider token (pt) — добавляет campaign token (ct)
+    для per-language атрибуции в App Analytics. Без pt — чистая ссылка."""
+    if not APPLE_PT:
+        return APPSTORE_URL
+    sep = "&" if "?" in APPSTORE_URL else "?"
+    ct = f"lid_{code}_{pos}"[:40]
+    return f"{APPSTORE_URL}{sep}pt={urllib.parse.quote(APPLE_PT, safe='')}&ct={urllib.parse.quote(ct, safe='')}"
 LANGS = sorted(CONFIG["languages"], key=lambda L: L["name"].casefold())
 
 TEMPLATE = (ROOT / "template.html").read_text(encoding="utf-8")
@@ -139,8 +170,10 @@ def build_page(L: dict) -> str:
         "json_ld": json_ld(code, page_url),
         "lang_links": lang_links(code),
         "lang_switch": lang_switch(code, strings),
-        "play_url": PLAY_URL,
-        "appstore_url": APPSTORE_URL,
+        "play_url_hero": play_link(code, "hero"),
+        "play_url_final": play_link(code, "final"),
+        "appstore_url_hero": appstore_link(code, "hero"),
+        "appstore_url_final": appstore_link(code, "final"),
     }
     for k, v in variables.items():
         out = out.replace("{{" + k + "}}", v)

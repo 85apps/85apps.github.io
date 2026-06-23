@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://85apps.com/sitemap.xml
 Sitemap: https://85apps.com/leben-in-deutschland/sitemap.xml
