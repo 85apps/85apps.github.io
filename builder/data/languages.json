@@ -179,6 +179,90 @@
       "name": "தமிழ்",
       "ogLocale": "ta_IN",
       "fastlane": "ta-IN"
+    },
+    {
+      "code": "he",
+      "dir": "rtl",
+      "name": "עברית",
+      "ogLocale": "he_IL",
+      "fastlane": "iw-IL"
+    },
+    {
+      "code": "sv",
+      "dir": "ltr",
+      "name": "Svenska",
+      "ogLocale": "sv_SE",
+      "fastlane": "sv-SE"
+    },
+    {
+      "code": "da",
+      "dir": "ltr",
+      "name": "Dansk",
+      "ogLocale": "da_DK",
+      "fastlane": "da-DK"
+    },
+    {
+      "code": "fi",
+      "dir": "ltr",
+      "name": "Suomi",
+      "ogLocale": "fi_FI",
+      "fastlane": "fi-FI"
+    },
+    {
+      "code": "no",
+      "dir": "ltr",
+      "name": "Norsk",
+      "ogLocale": "no_NO",
+      "fastlane": "no-NO"
+    },
+    {
+      "code": "cs",
+      "dir": "ltr",
+      "name": "Čeština",
+      "ogLocale": "cs_CZ",
+      "fastlane": "cs-CZ"
+    },
+    {
+      "code": "sk",
+      "dir": "ltr",
+      "name": "Slovenčina",
+      "ogLocale": "sk_SK",
+      "fastlane": "sk"
+    },
+    {
+      "code": "hu",
+      "dir": "ltr",
+      "name": "Magyar",
+      "ogLocale": "hu_HU",
+      "fastlane": "hu-HU"
+    },
+    {
+      "code": "el",
+      "dir": "ltr",
+      "name": "Ελληνικά",
+      "ogLocale": "el_GR",
+      "fastlane": "el-GR"
+    },
+    {
+      "code": "sr",
+      "dir": "ltr",
+      "name": "Српски",
+      "ogLocale": "sr_RS",
+      "fastlane": "sr"
+    },
+    {
+      "code": "hr",
+      "dir": "ltr",
+      "name": "Hrvatski",
+      "ogLocale": "hr_HR",
+      "fastlane": "hr"
+    },
+    {
+      "code": "bg",
+      "dir": "ltr",
+      "name": "Български",
+      "ogLocale": "bg_BG",
+      "fastlane": "bg"
     }
   ]
 }
