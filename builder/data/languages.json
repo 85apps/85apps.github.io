@@ -95,6 +95,90 @@
       "name": "Español",
       "ogLocale": "es_ES",
       "fastlane": "es-ES"
+    },
+    {
+      "code": "zh",
+      "dir": "ltr",
+      "name": "中文 (简体)",
+      "ogLocale": "zh_CN",
+      "fastlane": "zh-CN"
+    },
+    {
+      "code": "pt",
+      "dir": "ltr",
+      "name": "Português",
+      "ogLocale": "pt_PT",
+      "fastlane": "pt-PT"
+    },
+    {
+      "code": "pt-BR",
+      "dir": "ltr",
+      "name": "Português (Brasil)",
+      "ogLocale": "pt_BR",
+      "fastlane": "pt-BR"
+    },
+    {
+      "code": "it",
+      "dir": "ltr",
+      "name": "Italiano",
+      "ogLocale": "it_IT",
+      "fastlane": "it-IT"
+    },
+    {
+      "code": "id",
+      "dir": "ltr",
+      "name": "Bahasa Indonesia",
+      "ogLocale": "id_ID",
+      "fastlane": "id"
+    },
+    {
+      "code": "bn",
+      "dir": "ltr",
+      "name": "বাংলা",
+      "ogLocale": "bn_BD",
+      "fastlane": "bn-BD"
+    },
+    {
+      "code": "ja",
+      "dir": "ltr",
+      "name": "日本語",
+      "ogLocale": "ja_JP",
+      "fastlane": "ja-JP"
+    },
+    {
+      "code": "ko",
+      "dir": "ltr",
+      "name": "한국어",
+      "ogLocale": "ko_KR",
+      "fastlane": "ko-KR"
+    },
+    {
+      "code": "th",
+      "dir": "ltr",
+      "name": "ไทย",
+      "ogLocale": "th_TH",
+      "fastlane": "th"
+    },
+    {
+      "code": "nl",
+      "dir": "ltr",
+      "name": "Nederlands",
+      "ogLocale": "nl_NL",
+      "fastlane": "nl-NL"
+    },
+    {
+      "code": "ur",
+      "dir": "rtl",
+      "name": "اردو",
+      "ogLocale": "ur_PK",
+      "fastlane": "ur"
+    },
+    {
+      "code": "ta",
+      "dir": "ltr",
+      "name": "தமிழ்",
+      "ogLocale": "ta_IN",
+      "fastlane": "ta-IN"
     }
   ]
 }
