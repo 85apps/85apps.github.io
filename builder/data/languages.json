@@ -347,6 +347,97 @@
       "name": "नेपाली",
       "ogLocale": "ne_NP",
       "fastlane": "_del(ne)"
+    },
+    {
+      "code": "af",
+      "dir": "ltr",
+      "name": "Afrikaans",
+      "ogLocale": "af_ZA",
+      "fastlane": "_del(af)"
+    },
+    {
+      "code": "sq",
+      "dir": "ltr",
+      "name": "Shqip",
+      "ogLocale": "sq_AL",
+      "fastlane": "_del(sq)"
+    },
+    {
+      "code": "as",
+      "dir": "ltr",
+      "name": "অসমীয়া",
+      "ogLocale": "as_IN",
+      "fastlane": "_del(as)"
+    },
+    {
+      "code": "eu",
+      "dir": "ltr",
+      "name": "Euskara",
+      "ogLocale": "eu_ES",
+      "fastlane": "_del(eu)"
+    },
+    {
+      "code": "be",
+      "dir": "ltr",
+      "name": "Беларуская",
+      "ogLocale": "be_BY",
+      "fastlane": "_del(be)"
+    },
+    {
+      "code": "bs",
+      "dir": "ltr",
+      "name": "Bosanski",
+      "ogLocale": "bs_BA",
+      "fastlane": "_del(bs)"
+    },
+    {
+      "code": "ca",
+      "dir": "ltr",
+      "name": "Català",
+      "ogLocale": "ca_ES",
+      "fastlane": "_del(ca)"
+    },
+    {
+      "code": "ce",
+      "dir": "ltr",
+      "name": "Нохчийн",
+      "ogLocale": "ce_RU",
+      "fastlane": "_del(ce)"
+    },
+    {
+      "code": "zh-TW",
+      "dir": "ltr",
+      "name": "中文 (繁體)",
+      "ogLocale": "zh_TW",
+      "fastlane": "_del(zh_tw)"
+    },
+    {
+      "code": "prs",
+      "dir": "rtl",
+      "name": "دری",
+      "ogLocale": "fa_AF",
+      "fastlane": "_del(prs)"
+    },
+    {
+      "code": "et",
+      "dir": "ltr",
+      "name": "Eesti",
+      "ogLocale": "et_EE",
+      "fastlane": "_del(et)"
+    },
+    {
+      "code": "ff",
+      "dir": "ltr",
+      "name": "Fulfulde",
+      "ogLocale": "ff_SN",
+      "fastlane": "_del(ff)"
+    },
+    {
+      "code": "gl",
+      "dir": "ltr",
+      "name": "Galego",
+      "ogLocale": "gl_ES",
+      "fastlane": "_del(gl)"
     }
   ]
 }
