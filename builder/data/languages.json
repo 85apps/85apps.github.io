@@ -263,6 +263,90 @@
       "name": "Български",
       "ogLocale": "bg_BG",
       "fastlane": "bg"
+    },
+    {
+      "code": "ms",
+      "dir": "ltr",
+      "name": "Bahasa Melayu",
+      "ogLocale": "ms_MY",
+      "fastlane": "_del(ms)"
+    },
+    {
+      "code": "sw",
+      "dir": "ltr",
+      "name": "Kiswahili",
+      "ogLocale": "sw_KE",
+      "fastlane": "_del(sw)"
+    },
+    {
+      "code": "tl",
+      "dir": "ltr",
+      "name": "Filipino",
+      "ogLocale": "tl_PH",
+      "fastlane": "_del(tl)"
+    },
+    {
+      "code": "az",
+      "dir": "ltr",
+      "name": "Azərbaycan",
+      "ogLocale": "az_AZ",
+      "fastlane": "_del(az)"
+    },
+    {
+      "code": "kk",
+      "dir": "ltr",
+      "name": "Қазақша",
+      "ogLocale": "kk_KZ",
+      "fastlane": "_del(kk)"
+    },
+    {
+      "code": "uz",
+      "dir": "ltr",
+      "name": "Oʻzbek",
+      "ogLocale": "uz_UZ",
+      "fastlane": "_del(uz)"
+    },
+    {
+      "code": "hy",
+      "dir": "ltr",
+      "name": "Հայերեն",
+      "ogLocale": "hy_AM",
+      "fastlane": "_del(hy)"
+    },
+    {
+      "code": "ka",
+      "dir": "ltr",
+      "name": "ქართული",
+      "ogLocale": "ka_GE",
+      "fastlane": "_del(ka)"
+    },
+    {
+      "code": "am",
+      "dir": "ltr",
+      "name": "አማርኛ",
+      "ogLocale": "am_ET",
+      "fastlane": "_del(am)"
+    },
+    {
+      "code": "my",
+      "dir": "ltr",
+      "name": "မြန်မာ",
+      "ogLocale": "my_MM",
+      "fastlane": "_del(my)"
+    },
+    {
+      "code": "km",
+      "dir": "ltr",
+      "name": "ខ្មែរ",
+      "ogLocale": "km_KH",
+      "fastlane": "_del(km)"
+    },
+    {
+      "code": "ne",
+      "dir": "ltr",
+      "name": "नेपाली",
+      "ogLocale": "ne_NP",
+      "fastlane": "_del(ne)"
     }
   ]
 }
