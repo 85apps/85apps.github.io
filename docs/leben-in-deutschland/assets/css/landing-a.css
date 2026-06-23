@@ -239,13 +239,12 @@ footer { background: var(--dark); color: #B0BEC5; padding: 56px 0 40px; margin-t
 .f-brand span { color: #fff; font-weight: 700; }
 footer p { font-size: 13.5px; }
 .f-langs-title { color: #fff; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
-.f-langs { display: flex; flex-wrap: wrap; gap: 10px; }
+.f-langs { display: flex; flex-wrap: wrap; gap: 9px 20px; }
 .f-langs a {
   color: #CFD8DC; text-decoration: none; font-size: 14px;
-  border: 1px solid #455A64; border-radius: 999px; padding: 6px 14px;
 }
-.f-langs a[aria-current="page"] { background: #fff; color: var(--dark); border-color: #fff; font-weight: 600; }
-.f-langs a:hover { border-color: #90A4AE; }
+.f-langs a[aria-current="page"] { color: #fff; font-weight: 600; }
+.f-langs a:hover { color: #fff; }
 .f-bottom {
   border-top: 1px solid #37474F; margin-top: 40px; padding-top: 24px;
   display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between;

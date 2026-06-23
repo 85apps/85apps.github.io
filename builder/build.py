@@ -32,7 +32,7 @@ SITE = ROOT.parent / "docs" / BASE_PATH.strip("/")
 PLAY_URL = CONFIG["play_url"]
 APPSTORE_URL = CONFIG["appstore_url"]
 X_DEFAULT = CONFIG["x_default"]
-LANGS = CONFIG["languages"]
+LANGS = sorted(CONFIG["languages"], key=lambda L: L["name"].casefold())
 
 TEMPLATE = (ROOT / "template.html").read_text(encoding="utf-8")
 
