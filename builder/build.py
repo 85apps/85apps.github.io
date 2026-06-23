@@ -68,8 +68,9 @@ def lang_links(current: str) -> str:
     return "\n".join(out)
 
 
-def lang_switch(current: str) -> str:
+def lang_switch(current: str, strings: dict) -> str:
     cur_name = next((L["name"] for L in LANGS if L["code"] == current), current.upper())
+    search_ph = esc_attr(strings.get("lang_search", "Search language"))
     globe = (
         '<svg class="globe" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" '
         'd="M12 2a10 10 0 100 20 10 10 0 000-20zm6.92 6h-2.95a15.7 15.7 0 00-1.38-3.56A8.03 8.03 0 0118.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 010-4h3.38a16.6 16.6 0 000 4H4.26zm.82 2h2.95c.34 1.27.81 2.47 1.38 3.56A7.99 7.99 0 015.08 16zm2.95-8H5.08a7.99 7.99 0 014.33-3.56A15.7 15.7 0 008.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82a13.7 13.7 0 01-1.91 3.96zM14.34 14H9.66a14.6 14.6 0 010-4h4.68a14.6 14.6 0 010 4zm.25 5.56c.57-1.09 1.04-2.29 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14a16.6 16.6 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"></path></svg>'
@@ -81,10 +82,19 @@ def lang_switch(current: str) -> str:
     out = ['<details class="lang-switch">']
     out.append(f'  <summary aria-label="Language / Sprache">{globe}<span>{cur_name}</span>{chev}</summary>')
     out.append('  <div class="lang-menu">')
+    out.append('    <div class="lang-search-wrap">')
+    out.append(
+        f'      <input type="search" class="lang-search-input" placeholder="{search_ph}" '
+        f'aria-label="{search_ph}" autocomplete="off" autocapitalize="off" spellcheck="false">'
+    )
+    out.append("    </div>")
+    out.append('    <div class="lang-list">')
     for L in LANGS:
         cur = ' aria-current="page"' if L["code"] == current else ""
         rtl = ' dir="rtl"' if L["dir"] == "rtl" else ""
-        out.append(f'    <a href="../{L["code"]}/"{cur} lang="{L["code"]}"{rtl}>{L["name"]}</a>')
+        out.append(f'      <a href="../{L["code"]}/"{cur} lang="{L["code"]}"{rtl}>{L["name"]}</a>')
+    out.append("    </div>")
+    out.append('    <p class="lang-empty" hidden>—</p>')
     out.append("  </div>")
     out.append("</details>")
     return "\n".join(out)
@@ -128,7 +138,7 @@ def build_page(L: dict) -> str:
         "hreflang_links": hreflang_links(),
         "json_ld": json_ld(code, page_url),
         "lang_links": lang_links(code),
-        "lang_switch": lang_switch(code),
+        "lang_switch": lang_switch(code, strings),
         "play_url": PLAY_URL,
         "appstore_url": APPSTORE_URL,
     }
@@ -143,6 +153,57 @@ def build_page(L: dict) -> str:
         leftover = sorted(set(re.findall(r"\{\{[a-z0-9_]+\}\}", out)))
         raise SystemExit(f"{code}: unresolved placeholders: {leftover}")
     return out
+
+
+def build_redirect() -> str:
+    """Корневой редиректор docs/{base_path}/index.html.
+
+    Список языков генерится из languages.json, чтобы не держать его руками
+    в двух местах (массив `supported` + видимый список ссылок).
+    """
+    supported = json.dumps([L["code"] for L in LANGS], ensure_ascii=False)
+    links = "\n".join(
+        f'    <li><a href="./{L["code"]}/" lang="{L["code"]}"'
+        + (' dir="rtl"' if L["dir"] == "rtl" else "")
+        + f'>{esc_text(L["name"])}</a></li>'
+        for L in LANGS
+    )
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leben in DE — Test Trainer</title>
+<meta name="robots" content="noindex">
+<script>
+(function () {{
+  var supported = {supported};
+  var langs = navigator.languages || [navigator.language || "en"];
+  var target = "{X_DEFAULT}";
+  for (var i = 0; i < langs.length; i++) {{
+    var code = String(langs[i]).slice(0, 2).toLowerCase();
+    if (supported.indexOf(code) !== -1) {{ target = code; break; }}
+  }}
+  window.location.replace("./" + target + "/");
+}})();
+</script>
+<style>
+body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #F5F5F5; color: #1B1B1B; display: grid; place-items: center; min-height: 100vh; margin: 0; }}
+.box {{ text-align: center; padding: 24px; }}
+.box ul {{ list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 640px; }}
+.box a {{ color: #6D3B3B; }}
+</style>
+</head>
+<body>
+<div class="box">
+  <p>Leben in DE · Test Trainer</p>
+  <ul>
+{links}
+  </ul>
+</div>
+</body>
+</html>
+"""
 
 
 def build_sitemap() -> str:
@@ -168,9 +229,11 @@ def main() -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(build_page(L), encoding="utf-8")
         print(f"  {path}")
+    (SITE / "index.html").write_text(build_redirect(), encoding="utf-8")
+    print(f"  {SITE / 'index.html'} (redirect)")
     (SITE / "sitemap.xml").write_text(build_sitemap(), encoding="utf-8")
     print(f"  {SITE / 'sitemap.xml'}")
-    print(f"Done: {len(LANGS)} pages + sitemap.xml")
+    print(f"Done: {len(LANGS)} pages + redirect + sitemap.xml")
 
 
 if __name__ == "__main__":

@@ -81,6 +81,20 @@
       "name": "Tiếng Việt",
       "ogLocale": "vi_VN",
       "fastlane": "vi"
+    },
+    {
+      "code": "fr",
+      "dir": "ltr",
+      "name": "Français",
+      "ogLocale": "fr_FR",
+      "fastlane": "fr-FR"
+    },
+    {
+      "code": "es",
+      "dir": "ltr",
+      "name": "Español",
+      "ogLocale": "es_ES",
+      "fastlane": "es-ES"
     }
   ]
 }

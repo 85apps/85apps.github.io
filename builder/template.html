@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="{{title_attr}}">
 <meta name="twitter:description" content="{{description}}">
 <meta name="twitter:image" content="{{og_image}}">
-<link rel="stylesheet" href="../assets/css/landing-a.css?v=5">
+<link rel="stylesheet" href="../assets/css/landing-a.css?v=6">
 <script type="application/ld+json">{{json_ld}}</script>
 </head>
 <body data-screen-label="Leben in DE {{lang_badge}}">
@@ -252,6 +252,40 @@
     </div>
   </div>
 </footer>
+
+<script>
+/* Поиск по списку языков в переключателе (нужен при 100+ языках). */
+(function () {
+  var sw = document.querySelector(".lang-switch");
+  if (!sw) return;
+  var input = sw.querySelector(".lang-search-input");
+  var list = sw.querySelector(".lang-list");
+  var empty = sw.querySelector(".lang-empty");
+  if (!input || !list) return;
+  var items = [].slice.call(list.querySelectorAll("a"));
+  function norm(s) { return (s || "").toLowerCase(); }
+  function apply() {
+    var q = norm(input.value).trim();
+    var shown = 0;
+    items.forEach(function (a) {
+      var hit = !q ||
+        norm(a.textContent).indexOf(q) !== -1 ||
+        norm(a.getAttribute("lang")).indexOf(q) !== -1;
+      a.hidden = !hit;
+      if (hit) shown++;
+    });
+    if (empty) empty.hidden = shown !== 0;
+  }
+  input.addEventListener("input", apply);
+  sw.addEventListener("toggle", function () {
+    if (sw.open) {
+      input.value = "";
+      apply();
+      setTimeout(function () { input.focus(); }, 30);
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
