@@ -96,23 +96,8 @@ h1 .accent { color: var(--maroon); }
   margin-bottom: 32px;
 }
 .cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-.btn-store {
-  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
-  text-decoration: none; border-radius: 14px;
-  padding: 13px 22px; font-size: 16px; font-weight: 600;
-  min-height: 52px; width: 210px; box-sizing: border-box;
-}
-.btn-play { background: var(--dark); color: #fff; }
-.btn-play:hover { background: #37474F; }
-.btn-ios {
-  background: var(--dark); color: #fff;
-}
-.btn-ios:hover { background: #37474F; }
-.btn-store small { display: block; font-size: 11px; font-weight: 500; opacity: 0.75; line-height: 1.2; }
-.btn-store .lbl { line-height: 1.25; }
-.btn-store svg { flex: 0 0 auto; }
-.btn-play svg { width: 22px; height: 22px; }
-.btn-ios svg { width: 24px; height: 24px; }
+.store-badge { display: inline-flex; }
+.store-badge img { height: 48px; width: auto; display: block; }
 .hero-note { margin-top: 18px; font-size: 14px; color: var(--text-2); }
 
 /* phone */
