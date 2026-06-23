@@ -529,6 +529,97 @@
       "name": "ລາວ",
       "ogLocale": "lo_LA",
       "fastlane": "_del(lo)"
+    },
+    {
+      "code": "lv",
+      "dir": "ltr",
+      "name": "Latviešu",
+      "ogLocale": "lv_LV",
+      "fastlane": "_del(lv)"
+    },
+    {
+      "code": "ln",
+      "dir": "ltr",
+      "name": "Lingála",
+      "ogLocale": "ln_CD",
+      "fastlane": "_del(ln)"
+    },
+    {
+      "code": "lt",
+      "dir": "ltr",
+      "name": "Lietuvių",
+      "ogLocale": "lt_LT",
+      "fastlane": "_del(lt)"
+    },
+    {
+      "code": "mk",
+      "dir": "ltr",
+      "name": "Македонски",
+      "ogLocale": "mk_MK",
+      "fastlane": "_del(mk)"
+    },
+    {
+      "code": "mg",
+      "dir": "ltr",
+      "name": "Malagasy",
+      "ogLocale": "mg_MG",
+      "fastlane": "_del(mg)"
+    },
+    {
+      "code": "ml",
+      "dir": "ltr",
+      "name": "മലയാളം",
+      "ogLocale": "ml_IN",
+      "fastlane": "_del(ml)"
+    },
+    {
+      "code": "mt",
+      "dir": "ltr",
+      "name": "Malti",
+      "ogLocale": "mt_MT",
+      "fastlane": "_del(mt)"
+    },
+    {
+      "code": "mr",
+      "dir": "ltr",
+      "name": "मराठी",
+      "ogLocale": "mr_IN",
+      "fastlane": "_del(mr)"
+    },
+    {
+      "code": "mn",
+      "dir": "ltr",
+      "name": "Монгол",
+      "ogLocale": "mn_MN",
+      "fastlane": "_del(mn)"
+    },
+    {
+      "code": "or",
+      "dir": "ltr",
+      "name": "ଓଡ଼ିଆ",
+      "ogLocale": "or_IN",
+      "fastlane": "_del(or)"
+    },
+    {
+      "code": "om",
+      "dir": "ltr",
+      "name": "Oromoo",
+      "ogLocale": "om_ET",
+      "fastlane": "_del(om)"
+    },
+    {
+      "code": "ps",
+      "dir": "rtl",
+      "name": "پښتو",
+      "ogLocale": "ps_AF",
+      "fastlane": "_del(ps)"
+    },
+    {
+      "code": "pa",
+      "dir": "ltr",
+      "name": "ਪੰਜਾਬੀ",
+      "ogLocale": "pa_IN",
+      "fastlane": "_del(pa)"
     }
   ]
 }
