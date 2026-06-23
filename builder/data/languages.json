@@ -438,6 +438,97 @@
       "name": "Galego",
       "ogLocale": "gl_ES",
       "fastlane": "_del(gl)"
+    },
+    {
+      "code": "gu",
+      "dir": "ltr",
+      "name": "ગુજરાતી",
+      "ogLocale": "gu_IN",
+      "fastlane": "_del(gu)"
+    },
+    {
+      "code": "ha",
+      "dir": "ltr",
+      "name": "Hausa",
+      "ogLocale": "ha_NG",
+      "fastlane": "_del(ha)"
+    },
+    {
+      "code": "is",
+      "dir": "ltr",
+      "name": "Íslenska",
+      "ogLocale": "is_IS",
+      "fastlane": "_del(is)"
+    },
+    {
+      "code": "ig",
+      "dir": "ltr",
+      "name": "Igbo",
+      "ogLocale": "ig_NG",
+      "fastlane": "_del(ig)"
+    },
+    {
+      "code": "ga",
+      "dir": "ltr",
+      "name": "Gaeilge",
+      "ogLocale": "ga_IE",
+      "fastlane": "_del(ga)"
+    },
+    {
+      "code": "kn",
+      "dir": "ltr",
+      "name": "ಕನ್ನಡ",
+      "ogLocale": "kn_IN",
+      "fastlane": "_del(kn)"
+    },
+    {
+      "code": "kar",
+      "dir": "ltr",
+      "name": "ကညီ",
+      "ogLocale": "my_MM",
+      "fastlane": "_del(kar)"
+    },
+    {
+      "code": "rw",
+      "dir": "ltr",
+      "name": "Kinyarwanda",
+      "ogLocale": "rw_RW",
+      "fastlane": "_del(rw)"
+    },
+    {
+      "code": "rn",
+      "dir": "ltr",
+      "name": "Ikirundi",
+      "ogLocale": "rn_BI",
+      "fastlane": "_del(rn)"
+    },
+    {
+      "code": "ku",
+      "dir": "ltr",
+      "name": "Kurdî (Kurmancî)",
+      "ogLocale": "ku_TR",
+      "fastlane": "_del(ku)"
+    },
+    {
+      "code": "ckb",
+      "dir": "rtl",
+      "name": "کوردی (سۆرانی)",
+      "ogLocale": "ckb_IQ",
+      "fastlane": "_del(ckb)"
+    },
+    {
+      "code": "ky",
+      "dir": "ltr",
+      "name": "Кыргызча",
+      "ogLocale": "ky_KG",
+      "fastlane": "_del(ky)"
+    },
+    {
+      "code": "lo",
+      "dir": "ltr",
+      "name": "ລາວ",
+      "ogLocale": "lo_LA",
+      "fastlane": "_del(lo)"
     }
   ]
 }
